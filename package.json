@@ -1,0 +1,22 @@
+{
+  "name": "iqschedule",
+  "version": "0.0.1",
+  "description": "Intelligent Scheduing App",
+  "main": "event.js",
+  "dependencies": {
+    "jest-cli": "^14.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^3.2.0",
+    "eslint-config-google": "^0.6.0"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "."
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,7 +1,7 @@
 var moment = require('moment');
 
 function event(eventInfo) {
-    return eventInfo;
+    return;
 }
 
 event.start = function startDate(dateText) {

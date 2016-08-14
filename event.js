@@ -1,13 +1,17 @@
+var moment = require('moment');
+
 function event(eventInfo) {
     return eventInfo;
 }
 
-event.start = function startDate(eventInfo) {
-    return eventInfo.start
+event.start = function startDate(dateText) {
+    var startDate = moment(dateText);
+    return startDate;
 }
 
-event.end = function endDate(eventInfo) {
-    return eventInfo.end
+event.duration = function duration(startDate, lengthInHours) {
+    var endDate = startDate.clone().add(lengthInHours, 'hour');
+    return endDate;
 }
 
 module.exports = event;

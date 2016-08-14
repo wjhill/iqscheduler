@@ -1,27 +1,12 @@
 jest.unmock('../event');
+jest.unmock('moment');
 
-var moment = require('moment');
-
-var eventInfo = { 
-    "start": moment("2016"),
-    "end": moment("2016") 
-};
-
-describe('Get the event information', () => {
-    it('Ensures the event data is passed correctly', () => {
-        const event = require('../event');
-        expect(event(eventInfo)).toBe(eventInfo);
-    }),
-    it('Ensures the event start is set correctly', () => {
-        const event = require('../event');
-        expect(event.start(eventInfo)).toBe(moment("2016"));
-    }),
-    it('Ensures the event start is passing a real value', () => {
-        const event = require('../event');
-        expect(event.start(eventInfo)).not.toBe(moment("2015"));
-    }),
-    it('Ensures the event end is set correctly', () => {
-        const event = require('../event');
-        expect(event.end(eventInfo)).toBe(moment("2016"));
+describe('Set the event information', () => {
+    it('Ensures the event starting data is created correctly', () => {
+        var moment = require('moment');
+        var event = require('../event');
+        var textOfStartDate = "2016-08-20 11:00:00";
+        var startClass = event.start(textOfStartDate);
+        expect(startClass).toEqual(moment(textOfStartDate));
     })
 })
